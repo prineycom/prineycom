@@ -46,7 +46,7 @@ AI engineer who builds agent systems and runs them in production: I moved a 7-pe
 - Wrote its integrations with self-hosted services: MCP servers for tasks (sp-cli) and, earlier, habit and time tracking, alongside finance and bookmark services; plus cron automations — a watchlist monitor with priorities and quiet hours, digests, nightly backups.
 - Self-hosted Qwen3.6-35B-A3B as my agents' primary model on a single 12 GB GPU (MoE expert offload, quantized KV cache, 262K context, tool-calling template) and tuned the agent around it — enforced tool use, compression that keeps tool-call history; tested smaller models (LFM, Gemma, Qwen, community fine-tunes) on the GPU and the Pi; built [llama-tray](https://github.com/prineycom/llama-tray) to switch model presets.
 
-**[sp-cli](https://github.com/prineycom/sp-cli) — CLI and MCP server for Super Productivity** (_Sep 2026_)
+**[sp-cli](https://github.com/prineycom/sp-cli) — CLI and MCP server for the Super Productivity app** (_Sep 2026_)
 
 - 97 commands with an MCP server generated from the CLI itself; built in 2 days by an autonomous agent session on the yoke workflow and verified against a live phone sync.
 
