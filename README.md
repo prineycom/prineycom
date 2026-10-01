@@ -51,10 +51,6 @@ AI engineer who designs agent systems and runs them in production. I moved a 7-p
 - Agent delivery: in its first month the orchestrator took 88 tickets, merged 72 at a median of 16 hours from plan to merge, and returned 1 in 5 for rework at acceptance review.
 - Engineering output: 3,900+ commits and 368 pull requests (93% merged) across 59 repositories; about a third of the commits are agent context — plans, skills, CLAUDE.md — with around 25 skills and 25 subagents written.
 
-![Commit activity](assets/contributions.svg)
-
-_Commit activity across both of my GitHub accounts (personal and studio), counted from git history._
-
 ## Professional Experience
 
 ### **YokeLoop** — **Co-founder (agent integration & client delivery)** — _Apr 2026 — Present_
