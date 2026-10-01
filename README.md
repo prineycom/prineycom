@@ -43,13 +43,18 @@ AI engineer who builds agent systems and runs them in production. At an interact
 - Picked TTS by measured gates on one GPU: VoxCPM2 (0.42 s first chunk, rolled back at real-time factor 1.65–2.97 under load; 70 ms and 0.18 RTF with Nano-vLLM, declined for VRAM headroom), CosyVoice2 (rejected on Russian quality), Qwen3-TTS with per-utterance emotion instructions (shipped).
 - Evolved from a 3-node hybrid (Raspberry Pi 5 with LiveKit and LiteLLM, RTX 4070 for STT, TTS and animation, cloud LLM; 22 ADRs) to a local-first single host (Silero VAD → Whisper → LFM2.5 on llama.cpp → TTS; barge-in; JSON-Schema-enforced decisions over 14 tools in a rootless Docker sandbox), then to v3: FastRTC, LiteLLM with LangSmith tracing, a hand-written LLM loop and one `delegate(agent, task)` tool to coding agents.
 
-**Personal Hermes agent on a Raspberry Pi 5** (personal, _May 2026 — Present_)
+**Priney — personal AI assistant with a Second Brain** (personal, _Feb 2026 — Present_)
 
-- RAG over my Obsidian knowledge base for the agent: heading-aware chunking, multilingual embeddings (fastembed, ONNX) on the Pi's CPU, a SQLite vector store and incremental re-indexing on file changes — 224 notes, 641 chunks, no external API.
+- Always-on personal assistant on Hermes Agent (moved from OpenClaw in May 2026), self-hosted on a Raspberry Pi 5 behind Tailscale and reached through Telegram, with 4 isolated gateway profiles including a sandboxed public one. Covers tasks, calendar, email, finances, health and fitness, knowledge, travel and home routines.
+- Three-tier memory: bounded agent memory; an Obsidian Second Brain (226 notes in a PARA layout with agent-facing routing rules, synced through CouchDB LiveSync and git); on-device RAG over the vault (heading-aware chunking, multilingual MiniLM embeddings in ONNX, a SQLite vector store, incremental re-indexing on file changes; 641 chunks, no external API).
+- Model routing: subscription cloud models (Ollama Cloud) for the main agent, fallback and sub-agents; 11 auxiliary task slots (approval, compression, vision, web extraction) routed through a self-hosted LiteLLM proxy; speech-to-text, text-to-speech and embeddings run locally.
+- Self-hosted integrations over MCP — tasks through my own sp-cli MCP server, trackers, SSH; earlier FastMCP servers for finance, bookmarks, habits and time tracking — plus cron automation (a watchlist monitor with priorities and quiet hours, digests, nightly git backups). About 115 skills, ~40 of them custom and 27 written by the agent itself.
 
-**Local inference on a consumer GPU** (personal R&D, _Mar 2026 — Present_)
+**Local LLMs for personal agents** (personal R&D, _Mar 2026 — Present_)
 
-- Benchmarked LFM2.5-2.6B (Q4_K_M, llama.cpp) on CPU and GPU at concurrency 1–4 — 213 tok/s single-stream, 340 tok/s aggregate at concurrency 2, 18 tok/s on CPU — and let the numbers pick the production config (2 slots × 32K context, ~2.9 GiB). Qwen3.5-4B with MTP self-speculative decoding: ~94% draft acceptance, 90–178 tok/s; Qwen3.6-35B-A3B MoE with expert offload to CPU.
+- Self-hosted Qwen3.6-35B-A3B (MoE) as the primary model of my agents (OpenClaw, then about 200 Hermes sessions) on a single 12 GB RTX 4070. Converged through successive llama.cpp presets on expert offload to CPU, a q8_0 KV cache with flash attention, a 262K context, the Jinja chat template for tool calling and a vision projector. Tuned the agent for the model: forced tool-use enforcement, set compression so tool-call history survives, and split auxiliary tasks between the local model and larger ones through LiteLLM.
+- Tested smaller models for personal and edge agents on the RTX 4070 and a Raspberry Pi 5: LFM2 / LFM2.5, Gemma-4-E2B, Qwen3.5 (0.8B–4B), Nemotron-Nano, a 1-bit Bonsai-8B and community fine-tunes. LFM2.5-2.6B reached 213 tok/s single-stream and 340 tok/s at concurrency 2 on the GPU and became the voice agent's production config; LFM2-2.6B gave 4.2 tok/s on the Pi 5, ruling out interactive use there; Qwen3.5-4B with MTP speculative decoding kept ~94% draft acceptance at 90–178 tok/s.
+- Built [llama-tray](https://github.com/prineycom/llama-tray), a Windows tray controller for llama-server with per-model presets (GPU layers, MoE offload, KV quantization, vision projector), and a role-rewriting proxy that lets an agent framework talk to local backends.
 
 **[sp-cli](https://github.com/prineycom/sp-cli) — CLI and MCP server for Super Productivity** (_Sep 2026_)
 
