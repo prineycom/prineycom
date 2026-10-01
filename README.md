@@ -30,7 +30,6 @@ AI engineer who builds agent systems and runs them in production. At an interact
 **Aleen — medical-data AI assistant** (YokeLoop client, _Jun 2026 — Present_)
 
 - A Hermes agent as the interface to an MCP-based RAG system over family health records, with per-profile data isolation on the hosting platform I specified (a Docker sandbox per user, no Docker socket, credentials kept on the host, access through Telegram); 6 active users. I administer the deployment on the client's server and tune the harness and agents on request.
-- Built my own knowledge RAG on the same principles, now reused for the studio's SharePoint RAG: heading-aware chunking, multilingual embeddings (fastembed, ONNX) on a Raspberry Pi 5 CPU, a SQLite vector store and incremental re-indexing on file changes — 224 notes, 641 chunks, no external API.
 
 **yokemate — ticket-driven multi-repo orchestrator on Claude Code** (YokeLoop, co-built with [Ivan Hilkov](https://github.com/ivan-hilckov), _Aug 2026 — Present_; private, demo on request)
 
@@ -43,6 +42,10 @@ AI engineer who builds agent systems and runs them in production. At an interact
 - Cut NVIDIA Audio2Face-3D GPU memory from 8.8 GB to ~0.4 GB on a 12 GB RTX 4070: profiling showed the NIM ships a TensorRT engine prebuilt for batch 94, so I rebuilt the open-source SDK with a batch-1 engine (CUDA 13, TensorRT 10.13). A persistent C++ helper with a GPU blendshape solver cut per-utterance facial animation from ~3 s to 81 ms; Audio2Emotion drives a three.js ARKit face from voice prosody.
 - Picked TTS by measured gates on one GPU: VoxCPM2 (0.42 s first chunk, rolled back at real-time factor 1.65–2.97 under load; 70 ms and 0.18 RTF with Nano-vLLM, declined for VRAM headroom), CosyVoice2 (rejected on Russian quality), Qwen3-TTS with per-utterance emotion instructions (shipped).
 - Evolved from a 3-node hybrid (Raspberry Pi 5 with LiveKit and LiteLLM, RTX 4070 for STT, TTS and animation, cloud LLM; 22 ADRs) to a local-first single host (Silero VAD → Whisper → LFM2.5 on llama.cpp → TTS; barge-in; JSON-Schema-enforced decisions over 14 tools in a rootless Docker sandbox), then to v3: FastRTC, LiteLLM with LangSmith tracing, a hand-written LLM loop and one `delegate(agent, task)` tool to coding agents.
+
+**Personal Hermes agent on a Raspberry Pi 5** (personal, _May 2026 — Present_)
+
+- RAG over my Obsidian knowledge base for the agent: heading-aware chunking, multilingual embeddings (fastembed, ONNX) on the Pi's CPU, a SQLite vector store and incremental re-indexing on file changes — 224 notes, 641 chunks, no external API.
 
 **Local inference on a consumer GPU** (personal R&D, _Mar 2026 — Present_)
 
