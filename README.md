@@ -18,11 +18,11 @@ AI engineer who builds agent systems and runs them in production: I moved a 7-pe
 **LLM-driven development pipeline for a production studio** (Talking Birds & Flying Fish, _Aug 2025 — Present_)
 
 - Moved the studio team onto agent-driven delivery: added the first agent configuration in Aug 2025, and a year later it was in 22 of 33 repositories, with every 2026 project starting from it. Introduced a plan → isolated worktree → independent agent review → human acceptance → ship workflow that the team adopted, and measured the change with an evidence-tagged atlas of git, tracker and PR history.
-- Ran studio work through the yokemate orchestrator: 169 agent-written plans across 11 projects, 23 studio tickets merged through the pipeline in its first month.
+- Ran studio work through the yokemate orchestrator: 80+ agent-written plans across 11 studio projects, from museum installations to internal systems.
 
 **Hermes agents for business-process automation** (Talking Birds & Flying Fish, _Apr 2026 — Present_)
 
-- Deployed Hermes agents for staff with a shared skill bank I wrote — CG budget estimates from a brief to a priced spreadsheet and client PDF, estimate-template expertise, a freelancer database with privacy rules — connected to Microsoft 365 over MCP and covered by a promptfoo eval suite with LLM-as-judge.
+- Deployed Hermes agents for staff with a shared skill bank I wrote — CG budget estimates from a brief to a priced spreadsheet and client PDF, estimate-template expertise, an internal database with privacy rules — connected to Microsoft 365 over MCP and covered by a promptfoo eval suite with LLM-as-judge.
 - Built the data layer behind them: a corporate data core designed from an audit of every department's spreadsheets, with its 22-migration schema rolled out by an agent through the Supabase MCP server; an hourly Python sync to SharePoint via Microsoft Graph, in production since Sep 2026; the HR vacation tracker moved onto the database in two weeks (10 merged PRs, tests from 21 to 135).
 - Built Microsoft Teams bots on the data core — a company-wide HR bot (leave, worklogs, calendar, policy search) and data bots for management — and a company RAG over SharePoint documents, now in integration.
 
@@ -37,8 +37,8 @@ AI engineer who builds agent systems and runs them in production: I moved a 7-pe
 
 **Realtime voice agent — 3 iterations** (personal R&D, _Apr 2026 — Present_) · [v1](https://github.com/prineycom/voice-agent) · [v2](https://github.com/prineycom/voice-agent-v2) · [v3](https://github.com/yokeloop/voca)
 
-- Cut NVIDIA Audio2Face-3D GPU memory from 8.8 GB to ~0.4 GB by rebuilding its TensorRT engine for single-stream use, and per-utterance facial animation from ~3 s to 81 ms with a persistent C++ inference helper — so STT, TTS, an LLM and avatar animation fit on one 12 GB GPU.
-- Evolved from a 3-node hybrid with a Live2D avatar (22 ADRs) to a local-first single host with JSON-Schema tool calls in a Docker sandbox, then to v3 with LangSmith tracing and a single `delegate(agent, task)` tool to coding agents; chose TTS by gates I defined (latency, real-time factor under load, VRAM headroom, Russian quality).
+- Built a realtime speech-to-speech agent end to end — WebRTC transport, streaming STT → LLM → TTS with barge-in, and a 3D avatar whose face follows the voice's emotion — and fit the whole stack on one 12 GB GPU: cut NVIDIA Audio2Face-3D memory from 8.8 GB to ~0.4 GB by rebuilding its TensorRT engine, and facial animation from ~3 s to 81 ms per utterance with a persistent C++ inference helper.
+- Gave it hands: the agent turns speech into schema-validated tool calls executed in a locked-down Docker sandbox and reports results to Telegram; v3 extends this to delegating tasks to coding agents. Every model choice — STT, LLM, TTS — passed gates I set for latency, real-time factor and VRAM, recorded across 37 ADRs; the third version was a deliberate rewrite after I judged the second over-engineered.
 
 **Personal agent stack** (personal, _Feb 2026 — Present_)
 
@@ -72,10 +72,10 @@ _Two-founder company building LLM-agent products for small and mid-size business
 
 _Barcelona production studio: interactive installations for corporate conference stands and museum exhibitions; clients include Microsoft. Tech Lead (Jul 2024), Team Lead (May 2025), Head of Development (Jan 2026)_
 
-- Grew the web team from 2 to 5 developers and lead them alongside 2 Unreal Engine developers: 40 installations (25 visitor-facing) from 33 repositories — Microsoft conference stands touring 12 cities, game stations, a permanent museum exhibition — with 2,299 tracked tasks and 670 PRs; 1,128 own commits.
+- Built the development department from scratch: hired and grew the team (web 2 → 5, plus 2 Unreal Engine developers), defined the tech stack and internal packages, and set up the whole delivery process — YouTrack planning and task decomposition, an iterative cycle fitted to fixed exhibition dates, code review and CI, release management, e2e and soak tests for installations that run unattended for weeks, monitoring (Sentry, Loki, Grafana) and a documentation-first culture.
+- Delivered 40 installations (25 visitor-facing) from 33 repositories — Microsoft conference stands touring 12 cities, game stations, a permanent museum exhibition — with 2,299 tracked tasks and 670 PRs, while staying hands-on (1,128 own commits); the shared `@tb-ff/web-toolkit` I co-developed is used in 18 of 33 projects.
 - Lead the studio's AI adoption: the agent-driven development pipeline and Hermes business automation above.
 - As developer on the museum exhibit, replaced a legacy .NET drawing recognizer with a Python OpenCV service without touching installed hardware; built a 40-case test harness, disproved my own planned fix with diagnostics and moved the remaining error class into the printed form's marker codes.
-- Co-developed the shared `@tb-ff/web-toolkit` (used in 18 of 33 projects) and set up centralized logging (Loki, Grafana).
 
 ### **Sminex** — **Senior Full-Stack Developer, Team Lead (Business Process Automation)** — _May 2022 — Jul 2024_
 
