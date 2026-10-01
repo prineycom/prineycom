@@ -107,6 +107,7 @@ _Barcelona production studio: interactive installations for corporate conference
 - **Evals, RAG & observability**: promptfoo with LLM-as-judge, test harnesses for CV and agent behavior, RAG (chunking, multilingual embeddings, SQLite vector store, SharePoint via Microsoft Graph), LangSmith tracing, Sentry, Loki, Grafana
 - **Inference & voice**: llama.cpp (quantization, speculative decoding, MoE offload), TensorRT, LiteLLM, Open WebUI, Whisper, VoxCPM2, Qwen3-TTS, NVIDIA Audio2Face-3D, LiveKit, FastRTC / WebRTC, ComfyUI (local image and video models)
 - **Product stack**: Python (FastAPI, Django, pytest), TypeScript, React 19, Electron, Node.js, PostgreSQL, Supabase, SQLite, OpenCV, three.js, Docker, Dokploy, Tailscale, GitHub Actions
+- **Workstation**: Arch Linux (Omarchy), Neovim, herdr terminal multiplexer for agent panes, pi coding agent, Claude Code
 - **Languages**: Russian (native), English (fluent, professional working), Serbian (basic)
 
 ## Education
