@@ -52,7 +52,7 @@ AI engineer who designs agent systems and runs them in production. I moved a 7-p
 
 _Two-founder company building LLM-agent products for small and mid-size businesses; I design the agent layer and run client deployments, my co-founder builds the hosting platform_
 
-- Designed the isolation model for our agent-hosting platform — a Docker sandbox per user with no Docker socket, credentials kept on the host, per-user data — and wrote its per-employee container guide; deploy and operate it for client agent deployments.
+- Designed the isolation model for our agent-hosting platform — a Docker sandbox per user with no Docker socket, credentials kept on the host, per-user data — and wrote its per-employee container guide; deploy and operate it for clients.
 - Build the agent layer for clients — skill banks, MCP integrations, promptfoo evals — and co-authored the yoke Claude Code plugin and the yokemate orchestrator.
 
 ### **Talking Birds & Flying Fish** — **Tech Lead → Team Lead → Head of Development** — _Jul 2024 — Present_
