@@ -41,6 +41,7 @@ def main() -> None:
     text = SRC.read_text(encoding="utf-8")
     # The PDF itself does not link to itself.
     text = text.replace(" • [CV.pdf](https://github.com/prineycom/prineycom/raw/main/CV.pdf)", "")
+    text = text.replace("](assets/", f"]({(ROOT / 'assets').as_uri()}/")
     body = markdown.markdown(text, extensions=["extra", "sane_lists"])
     HTML.parent.mkdir(exist_ok=True)
     HTML.write_text(

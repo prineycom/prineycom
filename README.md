@@ -54,9 +54,13 @@ AI engineer who builds agent systems and runs them in production. At an interact
 
 ## Key Metrics (July 2025 — September 2026)
 
-- Throughput with a quality denominator: 3,900+ commits (automated backups excluded) and 368 pull requests (341 merged, 93%) across 59 repositories in 3 organizations and a personal account, with 12 reverts among 4,236 commits analyzed locally.
+- Throughput with a quality denominator: 3,900+ commits and 368 pull requests (341 merged, 93%) across 59 repositories in 3 organizations and a personal account in 15 months; only 12 commits were reverts.
 - Context engineering: about a third of commits change only Markdown or agent-configuration files (plans, journals, skills, CLAUDE.md); about 25 skills and 25 subagent definitions authored and versioned in git.
 - Studio delivery led: 40 installations from 33 repositories, 2,299 tracked tasks and 670 pull requests; agent configuration grew from 0 to 22 of 33 repositories in a year.
+
+![Contribution graph](assets/contributions.svg)
+
+_Drawn from local git history across my personal and work GitHub accounts; GitHub's own graph on this profile misses about 1,350 studio commits made under the work account._
 
 ## Professional Experience
 
