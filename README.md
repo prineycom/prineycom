@@ -7,7 +7,7 @@ _Agent systems in production for a studio team and client users · 10+ years in 
 ## Contact
 
 [doninpr@gmail.com](mailto:doninpr@gmail.com) • [linkedin.com/in/doninpr](https://www.linkedin.com/in/doninpr) • [t.me/doninpr](https://t.me/doninpr) • [github.com/prineycom](https://github.com/prineycom) • [CV.pdf](https://github.com/prineycom/prineycom/raw/main/CV.pdf)  
-Novi Sad, Serbia (CET, UTC+1) · remote · open to full-time roles worldwide
+Novi Sad, Serbia (CET, UTC+1) · remote · open to full-time AI Engineer, Agent Platform, Applied AI and Forward Deployed roles worldwide
 
 ## Professional Summary
 
@@ -32,7 +32,7 @@ AI engineer who designs agent systems and runs them in production. I moved a 7-p
 
 **yokemate — ticket-driven multi-repo orchestrator on Claude Code** (YokeLoop, co-built with [Ivan Hilkov](https://github.com/ivan-hilckov), _Aug 2026 — Present_; private, demo on request)
 
-- Runs my delivery across 4 organizations and about 18 repositories, from tracker tickets (YouTrack, GitHub Issues) to merged pull requests.
+- Runs my delivery across 4 organizations and about 18 repositories, from tracker tickets (YouTrack, GitHub Issues) to merged pull requests: in its first month I put 88 tickets through it, 72 merged at a median of 16 hours from plan to merge, 1 in 5 sent back for rework at acceptance review.
 - Read-only scout and planner subagents, implementation in an isolated worktree, an independent reviewer subagent and a human merge gate; a command guard lets task sessions run unattended. Grew out of the co-authored [yoke](https://github.com/yokeloop/yoke) plugin; my rebuild on the open-source pi coding-agent runtime, [yokemate-pi](https://github.com/yokeloop/yokemate-pi), showed the workflow-first design was the wrong foundation and led to mypi, a memory-first successor (early stage).
 
 **Realtime voice agent — 3 iterations** (personal R&D, _Apr 2026 — Present_) · [v1](https://github.com/prineycom/voice-agent) · [v2](https://github.com/prineycom/voice-agent-v2) · [v3](https://github.com/yokeloop/voca)
@@ -45,11 +45,6 @@ AI engineer who designs agent systems and runs them in production. I moved a 7-p
 - Run Priney, my always-on personal assistant on Hermes Agent, self-hosted on a Raspberry Pi 5 and covering tasks, calendar, email, finances, health, knowledge and travel. Designed its Second Brain — a 226-note Obsidian vault with routing rules for where the agent reads and writes, synced through CouchDB and git — with on-device RAG over it (ONNX embeddings, SQLite vectors, incremental re-indexing), and wrote its MCP integrations and cron automations (a watchlist monitor with priorities and quiet hours, digests, backups).
 - Self-hosted Qwen3.6-35B-A3B as my agents' primary model on a single 12 GB GPU (MoE expert offload, quantized KV cache, 262K context) and tuned the agent around it — enforced tool use, compression that keeps tool-call history; tested LFM, Gemma and Qwen variants and community fine-tunes on the GPU and the Pi.
 - Wrote [sp-cli](https://github.com/prineycom/sp-cli), a CLI and MCP server for the Super Productivity app: 97 commands, with MCP tools generated from the CLI itself; built in 2 days by an autonomous agent session on the yoke workflow and verified against a live phone sync.
-
-## Key Metrics (July 2025 — September 2026)
-
-- Agent delivery: in its first month the orchestrator took 88 tickets, merged 72 at a median of 16 hours from plan to merge, and returned 1 in 5 for rework at acceptance review.
-- Engineering output: 3,900+ commits and 368 pull requests (93% merged) across 59 repositories; about a third of the commits are agent context — plans, skills, CLAUDE.md — with around 25 skills and 25 subagents written.
 
 ## Professional Experience
 
@@ -84,12 +79,7 @@ _Barcelona production studio: interactive installations for corporate conference
 - **Agents & LLM**: Claude Code (skills, subagents, hooks), Claude Agent SDK, pi, Hermes Agent, MCP servers, context engineering, orchestrator-worker pipelines with human merge gates, structured outputs and tool calling, LiteLLM
 - **Evals, RAG & inference**: promptfoo with LLM-as-judge, test harnesses, RAG (chunking, multilingual embeddings, vector stores, SharePoint via Microsoft Graph), LangSmith, llama.cpp (quantization, MoE offload, speculative decoding), TensorRT, Whisper and TTS models, ComfyUI
 - **Stack & workstation**: Python (FastAPI, Django, pytest), TypeScript, React, Electron, Node.js, PostgreSQL, Supabase, SQLite, OpenCV, Docker, GitHub Actions; Arch Linux (Omarchy), Neovim, herdr, pi, Claude Code
-- **Languages**: Russian (native), English (fluent, professional working), Serbian (basic)
 
 ## Education
 
-**Information Systems and Technologies** — Moscow State University of Geodesy and Cartography (MIIGAiK), 2013 — 2017
-
-## Availability
-
-- Open to full-time AI Engineer, Agent / LLM Platform Engineer, Applied AI and Forward Deployed Engineer roles; remote, worldwide; B2B contract or employer of record.
+**Information Systems and Technologies** — Moscow State University of Geodesy and Cartography (MIIGAiK), 2013 — 2017 · Languages: Russian (native), English (fluent, professional working), Serbian (basic)
