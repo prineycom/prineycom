@@ -73,23 +73,15 @@ _Barcelona production studio: interactive installations for corporate conference
 - Led the studio's AI adoption: the agent-driven development pipeline and business-process agents above.
 - As developer on the museum exhibit, replaced a legacy .NET drawing recognizer with a Python OpenCV service without touching installed hardware; built a 40-case test harness, disproved my own planned fix with diagnostics and moved the remaining error class into the printed form's marker codes.
 
-### **Sminex** — **Senior Full-Stack Developer, Team Lead (Business Process Automation)** — _May 2022 — Jul 2024_
+### **Sminex** — **Team Lead, Business Process Automation** — _May 2022 — Jul 2024_
 
-- Led the in-house business-process automation team of 3 at a real-estate developer (process, architecture, hiring); shipped 5 web services automating construction and operational workflows, integrated with internal systems and supported in production. _TypeScript, React, NestJS, PostgreSQL, Django, Autodesk Forge._
+- Led a team of 3 at a real-estate developer; shipped 5 web services automating construction and operational workflows, integrated with internal systems (TypeScript, NestJS, PostgreSQL, Django).
 
 ### **SU-10** — **Tech Lead, Construction Process Automation** — _Aug 2021 — May 2022_
 
-- Led a team of 3 automating construction business processes on the Autodesk Forge (BIM) API, from development process to MVP in 10 months; 1st place at the Autodesk Forge Hackathon 2021 (Cloud Collaboration).
+- Led a team of 3 from process setup to MVP on the Autodesk Forge (BIM) API; 1st place at the Autodesk Forge Hackathon 2021.
 
-### **RoadAR** — **Frontend Developer** — _Feb 2022 — Sep 2022_ (part-time)
-
-- Web visualization of point clouds and spatial data from SLAM and ML pipelines (React, deck.gl, WebGL, Cesium).
-
-### **DataMap Geodata Laboratory** — **Frontend Web Developer** — _Mar 2018 — Aug 2021_
-
-- GIS web services and geodata collection: 5+ client projects through Upwork, 5 data-collection projects; trained 20+ students and co-organized 2 hackathons.
-
-**Earlier roles**: AT Consulting — Frontend Developer (_2017 — 2018_); freelance web development (_2015 — 2016_); PHP internship (_2014_).
+**Earlier roles**: RoadAR — point-cloud and SLAM data visualization (_2022_, part-time); DataMap Geodata Laboratory — GIS web services, 5+ client projects, trained 20+ students (_2018 — 2021_); AT Consulting — frontend (_2017 — 2018_); freelance web and a PHP internship (_2014 — 2016_).
 
 ## Technical Skills
 
