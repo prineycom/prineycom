@@ -11,9 +11,26 @@ Novi Sad, Serbia (CET, UTC+1) · remote · open to full-time roles worldwide
 
 ## Professional Summary
 
-AI engineer who builds agent systems and runs them in production. I co-built a ticket-driven orchestrator on Claude Code that takes each change from plan to an agent implementation, an independent review and a human-confirmed merge, and I run my own delivery through it: 72 tickets merged in its first month across 4 organizations. Around it: Hermes agents serving client users, MCP servers, promptfoo evals for agent skills, RAG over personal and company knowledge, and a realtime voice agent on local models, where I cut one model's GPU memory 20× by rebuilding its TensorRT engine. 10+ years of full-stack engineering (Python, TypeScript) and 5 years leading teams; currently Head of Development at a Barcelona interactive-installation studio, where I brought agent-driven delivery to a 7-person team.
+AI engineer who builds agent systems and runs them in production. At an interactive-installation studio I moved a 7-person team onto agent-driven development (agent configuration in 22 of 33 repositories within a year) and automate business processes with Hermes agents, MCP integrations and a corporate data core rolled out by an agent. For clients I deploy and operate isolated agents, including a medical-data RAG assistant with 6 active users. I co-built the ticket-driven orchestrator on Claude Code that runs my own delivery — 72 tickets merged in its first month across 4 organizations — and go deep on local inference, cutting one model's GPU memory 20× by rebuilding its TensorRT engine. 10+ years of full-stack engineering (Python, TypeScript), 5 of them leading teams.
 
 ## AI Engineering Projects
+
+**LLM-driven development pipeline for a production studio** (Talking Birds & Flying Fish, _Aug 2025 — Present_)
+
+- Moved a 7-person studio team onto agent-driven delivery: added the first agent configuration in Aug 2025; a year later it was in 22 of 33 web repositories, and every 2026 project started with it. Introduced the plan → isolated worktree → independent agent review → human acceptance → ship workflow, which the team adopted beyond my own repositories.
+- Run studio work through the yokemate orchestrator (below): 169 agent plans across 11 studio projects; 23 studio tickets merged through the pipeline in its first month, from museum installations to internal systems.
+- Built an evidence-tagged atlas of the studio's delivery over git, tracker and PR history (33 repositories, 2,299 tasks, 670 PRs) to measure what agent-driven delivery changed, with every claim tagged by its evidence: code, document or discrepancy.
+
+**Hermes agents for business-process automation** (Talking Birds & Flying Fish, _Apr 2026 — Present_)
+
+- Deployed Hermes Agent (Nous Research) profiles for staff: Telegram access, a Docker sandbox per profile, Microsoft 365 over MCP, and a shared skill bank rolled out by symlink — CG and 3D budget estimates from a brief to a priced spreadsheet and client PDF, estimate-template expertise, a freelancer database with privacy rules for group chats — covered by a promptfoo eval suite with LLM-as-judge.
+- Built the data layer the agents work on: a corporate data core on self-hosted Supabase designed from an audit of every department's spreadsheets, its 22-migration schema rolled out by an agent through the Supabase MCP server from a self-verifying spec; an hourly Python service syncing PII-free views to SharePoint through Microsoft Graph (production since Sep 2026); the HR vacation tracker moved onto the database in two weeks (7 migrations, 10 merged PRs, tests from 21 to 135).
+- Built Microsoft Teams bots on the data core — a company-wide HR bot (vacations and days off, worklogs, calendar, policy search) and bots for management to update corporate data — and a company RAG over SharePoint documents, now in integration.
+
+**Aleen — medical-data AI assistant** (YokeLoop client, _2026 — Present_)
+
+- A Hermes agent as the interface to an MCP-based RAG system over family health records, with per-profile data isolation on the hosting platform I specified (a Docker sandbox per user, no Docker socket, credentials kept on the host, access through Telegram); 6 active users. I administer the deployment on the client's server and tune the harness and agents on request.
+- The retrieval design was first proven on my own knowledge base: heading-aware chunking, multilingual embeddings (fastembed, ONNX) on a Raspberry Pi 5 CPU, a SQLite vector store and incremental re-indexing on file changes — 224 notes, 641 chunks, no external API.
 
 **yokemate — ticket-driven multi-repo orchestrator on Claude Code** (YokeLoop, co-built with [Ivan Hilkov](https://github.com/ivan-hilckov), _Aug 2026 — Present_; private, demo on request)
 
@@ -47,20 +64,17 @@ AI engineer who builds agent systems and runs them in production. I co-built a t
 
 _Two-founder company building LLM-agent products for small and mid-size businesses; I own product, specifications and client delivery, my co-founder owns core engineering_
 
-- Specified hermes-orchestration, a platform for hosting isolated agents on bare metal: a Hermes Agent (Nous Research) profile per user, a Docker sandbox per profile with no Docker socket and credentials kept on the host, access through Telegram. I deploy and operate it for clients.
-- **Aleen** — medical-data assistant: a Hermes agent over an MCP-based RAG system on health records with per-profile data isolation; 6 active users. I administer the deployment on the client's server and tune the harness and agents.
-- Built a personal knowledge RAG on a Raspberry Pi 5: heading-aware chunking, multilingual embeddings (fastembed, ONNX) on CPU, a SQLite vector store, incremental re-indexing on file changes; 224 notes, 641 chunks, no external API. The same design now serves a company RAG over SharePoint.
+- Specified hermes-orchestration, a platform for hosting isolated AI agents on bare metal, and deploy and operate it for clients: Aleen (medical-data assistant, 6 active users) and Talking Birds (staff agents for business-process automation) — see Projects.
+- Co-author of the yoke Claude Code plugin and the yokemate orchestrator; I set product direction and specifications, my co-founder leads core engineering.
 
 ### **Talking Birds & Flying Fish** — **Tech Lead → Team Lead → Head of Development** — _Jul 2024 — Present_
 
 _Barcelona production studio: interactive installations for corporate conference stands and museum exhibitions; clients include Microsoft. Tech Lead (Jul 2024), Team Lead (May 2025), Head of Development (Jan 2026)_
 
 - Grew the web team from 2 to 5 developers and lead them alongside 2 Unreal Engine developers: 40 installations (25 visitor-facing) in 12 experience families from 33 repositories — Microsoft conference stands touring 12 cities, game stations, a permanent museum exhibition — with 2,299 tracked tasks and 670 PRs. Still hands-on: 1,128 own commits in 24 of 33 repositories.
-- Brought agent-driven delivery to the studio: first agent configuration in Aug 2025, 22 of 33 repositories a year later, every 2026 project started with it; introduced the plan → worktree → independent review → ship workflow, adopted by the team.
-- Lead the AI Agent Integration track. Designed a corporate data core on self-hosted Supabase from an audit of every department's spreadsheets; an agent rolled out the 22-migration schema through the Supabase MCP server from a self-verifying spec. An hourly Python service syncs PII-free views to SharePoint through Microsoft Graph (production since Sep 2026). Moved the HR vacation tracker onto the database in two weeks: 7 migrations, 10 merged PRs, tests from 21 to 135.
-- Deployed Hermes agents for staff (Telegram, Docker-sandboxed, Microsoft 365 over MCP) with a shared skill bank for CG budget estimates, estimate templates and a freelancer database, covered by a promptfoo eval suite. Built Microsoft Teams bots on the data core: a company-wide HR bot (vacations and days off, worklogs, calendar, policy search) and bots for management to update corporate data.
+- Lead the studio's AI adoption and agent integration track (see Projects: development pipeline, Hermes agents, data core).
 - As developer on the museum exhibit: replaced a legacy .NET drawing recognizer with a Python service (OpenCV ArUco markers, homography, FastAPI, single-exe build with a CI smoke test) without touching installed hardware; built a 40-case test harness, disproved my own planned fix with diagnostics and moved the remaining error class into the printed form's marker codes (ADR).
-- Co-developed the shared `@tb-ff/web-toolkit` (used in 18 of 33 projects); set up centralized logging (Loki, Grafana); built an evidence-tagged analytics atlas over git, tracker and PR history to guide reuse.
+- Co-developed the shared `@tb-ff/web-toolkit` (used in 18 of 33 projects); set up centralized logging (Loki, Grafana).
 
 ### **Sminex** — **Senior Full-Stack Developer, Team Lead (Business Process Automation)** — _May 2022 — Jul 2024_
 
