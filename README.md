@@ -2,7 +2,7 @@
 
 **AI Engineer — Agent Orchestration, LLM Tooling**
 
-_Agent systems built for daily delivery and run for real users: a ticket-driven multi-repo orchestrator, MCP servers, evals for agent skills, local inference tuned to a single GPU · 10+ years in software, 5 of them leading teams_
+_Agent systems in production for a studio team and client users · 10+ years in software, 5 of them leading teams_
 
 ## Contact
 
@@ -11,59 +11,49 @@ Novi Sad, Serbia (CET, UTC+1) · remote · open to full-time roles worldwide
 
 ## Professional Summary
 
-AI engineer who builds agent systems and runs them in production. At an interactive-installation studio I moved a 7-person team onto agent-driven development (agent configuration in 22 of 33 repositories within a year) and automate business processes with Hermes agents, MCP integrations and a corporate data core rolled out by an agent. For clients I deploy and operate isolated agents, including a medical-data RAG assistant with 6 active users. I co-built the ticket-driven orchestrator on Claude Code that runs my own delivery — 72 tickets merged in its first month across 4 organizations — and run open models locally: benchmarking and quantization choices on llama.cpp, speculative decoding, and fitting STT, TTS, an LLM and avatar animation onto a single 12 GB GPU for a realtime voice agent. 10+ years of full-stack engineering (Python, TypeScript), 5 of them leading teams.
+AI engineer who builds agent systems and runs them in production: I moved a 7-person studio team onto agent-driven development, automate its business processes with Hermes agents and MCP integrations, and operate a medical-data RAG assistant for client users. I co-built the ticket-driven Claude Code orchestrator that runs my own delivery and self-host open models for my agents. 10+ years of full-stack engineering (Python, TypeScript), 5 of them leading teams.
 
 ## AI Engineering Projects
 
 **LLM-driven development pipeline for a production studio** (Talking Birds & Flying Fish, _Aug 2025 — Present_)
 
-- Moved a 7-person studio team onto agent-driven delivery: added the first agent configuration in Aug 2025; a year later it was in 22 of 33 web repositories, and every 2026 project started with it. Introduced the plan → isolated worktree → independent agent review → human acceptance → ship workflow, which the team adopted beyond my own repositories.
-- Run studio work through the yokemate orchestrator (below): 169 agent plans across 11 studio projects; 23 studio tickets merged through the pipeline in its first month, from museum installations to internal systems.
-- Built an evidence-tagged atlas of the studio's delivery over git, tracker and PR history (33 repositories, 2,299 tasks, 670 PRs) to measure what agent-driven delivery changed, with every claim tagged by its evidence: code, document or discrepancy.
+- Moved the studio team onto agent-driven delivery: added the first agent configuration in Aug 2025, and a year later it was in 22 of 33 repositories, with every 2026 project starting from it. Introduced a plan → isolated worktree → independent agent review → human acceptance → ship workflow that the team adopted, and measured the change with an evidence-tagged atlas of git, tracker and PR history.
+- Ran studio work through the yokemate orchestrator: 169 agent-written plans across 11 projects, 23 studio tickets merged through the pipeline in its first month.
 
 **Hermes agents for business-process automation** (Talking Birds & Flying Fish, _Apr 2026 — Present_)
 
-- Deployed Hermes Agent (Nous Research) profiles for staff: Telegram access, a Docker sandbox per profile, Microsoft 365 over MCP, and a shared skill bank rolled out by symlink — CG and 3D budget estimates from a brief to a priced spreadsheet and client PDF, estimate-template expertise, a freelancer database with privacy rules for group chats — covered by a promptfoo eval suite with LLM-as-judge.
-- Built the data layer the agents work on: a corporate data core on self-hosted Supabase designed from an audit of every department's spreadsheets, its 22-migration schema rolled out by an agent through the Supabase MCP server from a self-verifying spec; an hourly Python service syncing PII-free views to SharePoint through Microsoft Graph (production since Sep 2026); the HR vacation tracker moved onto the database in two weeks (7 migrations, 10 merged PRs, tests from 21 to 135).
-- Built Microsoft Teams bots on the data core — a company-wide HR bot (vacations and days off, worklogs, calendar, policy search) and bots for management to update corporate data — and a company RAG over SharePoint documents, now in integration.
+- Deployed Hermes agents for staff with a shared skill bank I wrote — CG budget estimates from a brief to a priced spreadsheet and client PDF, estimate-template expertise, a freelancer database with privacy rules — connected to Microsoft 365 over MCP and covered by a promptfoo eval suite with LLM-as-judge.
+- Built the data layer behind them: a corporate data core designed from an audit of every department's spreadsheets, with its 22-migration schema rolled out by an agent through the Supabase MCP server; an hourly Python sync to SharePoint via Microsoft Graph, in production since Sep 2026; the HR vacation tracker moved onto the database in two weeks (10 merged PRs, tests from 21 to 135).
+- Built Microsoft Teams bots on the data core — a company-wide HR bot (leave, worklogs, calendar, policy search) and data bots for management — and a company RAG over SharePoint documents, now in integration.
 
 **Aleen — medical-data AI assistant** (YokeLoop client, _Jun 2026 — Present_)
 
-- A Hermes agent as the interface to an MCP-based RAG system over family health records, with per-profile data isolation on the hosting platform I specified (a Docker sandbox per user, no Docker socket, credentials kept on the host, access through Telegram); 6 active users. I administer the deployment on the client's server and tune the harness and agents on request.
+- Run a Hermes agent over an MCP-based RAG system on family health records, with per-user data isolation; 6 active users. Administer the deployment on the client's server and tune the harness and agents.
 
 **yokemate — ticket-driven multi-repo orchestrator on Claude Code** (YokeLoop, co-built with [Ivan Hilkov](https://github.com/ivan-hilckov), _Aug 2026 — Present_; private, demo on request)
 
-- In daily use across 4 organizations and about 18 repositories, with tickets from 3 YouTrack instances and GitHub Issues: 88 tickets driven in the first month, 72 merged at a median of 16 hours from recorded plan to merge; 1 in 5 sent back for rework at acceptance review instead of being merged.
-- Pipeline: read-only scout and planner subagents → implementation in an isolated git worktree → the project's own checks → an independent reviewer subagent → human acceptance → one PR per repository. Stage moves are atomic compare-and-set transitions in SQLite; a PreToolUse guard replaces permission prompts so task sessions run unattended; the model is routed per project.
-- Lineage: [yoke](https://github.com/yokeloop/yoke), a co-authored Claude Code plugin → yokemate → [yokemate-pi](https://github.com/yokeloop/yokemate-pi), my rebuild on the pi agent runtime (14k lines of TypeScript, 421 tests), which showed a workflow-first design was the wrong foundation → mypi, a memory-first successor (early stage).
+- Runs my delivery across 4 organizations and about 18 repositories: 88 tickets in the first month, 72 merged at a median of 16 hours from plan to merge, 1 in 5 sent back for rework at acceptance review.
+- Read-only scout and planner subagents, implementation in an isolated worktree, an independent reviewer subagent and a human merge gate; a command guard lets task sessions run unattended. Grew out of the co-authored [yoke](https://github.com/yokeloop/yoke) plugin; my rebuild on the pi runtime, [yokemate-pi](https://github.com/yokeloop/yokemate-pi), showed the workflow-first design was the wrong foundation and led to mypi, a memory-first successor (early stage).
 
 **Realtime voice agent — 3 iterations** (personal R&D, _Apr 2026 — Present_) · [v1](https://github.com/prineycom/voice-agent) · [v2](https://github.com/prineycom/voice-agent-v2) · [v3](https://github.com/yokeloop/voca)
 
-- Cut NVIDIA Audio2Face-3D GPU memory from 8.8 GB to ~0.4 GB on a 12 GB RTX 4070: profiling showed the NIM ships a TensorRT engine prebuilt for batch 94, so I rebuilt the open-source SDK with a batch-1 engine (CUDA 13, TensorRT 10.13). A persistent C++ helper with a GPU blendshape solver cut per-utterance facial animation from ~3 s to 81 ms; Audio2Emotion drives a three.js ARKit face from voice prosody.
-- Chose TTS by gates I defined (first-chunk latency, real-time factor under load, VRAM headroom, Russian quality): VoxCPM2 shipped and rolled back, CosyVoice2 rejected, Qwen3-TTS with per-utterance emotion instructions kept.
-- Evolved from a 3-node hybrid (Raspberry Pi 5 with LiveKit and LiteLLM, RTX 4070 for STT, TTS and animation, cloud LLM; 22 ADRs) to a local-first single host (Silero VAD → Whisper → LFM2.5 on llama.cpp → TTS; barge-in; JSON-Schema-enforced decisions over 14 tools in a rootless Docker sandbox), then to v3: FastRTC, LiteLLM with LangSmith tracing, a hand-written LLM loop and one `delegate(agent, task)` tool to coding agents.
+- Cut NVIDIA Audio2Face-3D GPU memory from 8.8 GB to ~0.4 GB by rebuilding its TensorRT engine for single-stream use, and per-utterance facial animation from ~3 s to 81 ms with a persistent C++ inference helper — so STT, TTS, an LLM and avatar animation fit on one 12 GB GPU.
+- Evolved from a 3-node hybrid with a Live2D avatar (22 ADRs) to a local-first single host with JSON-Schema tool calls in a Docker sandbox, then to v3 with LangSmith tracing and a single `delegate(agent, task)` tool to coding agents; chose TTS by gates I defined (latency, real-time factor under load, VRAM headroom, Russian quality).
 
-**Priney — personal AI assistant with a Second Brain** (personal, _Feb 2026 — Present_)
+**Personal agent stack** (personal, _Feb 2026 — Present_)
 
-- Always-on personal assistant on Hermes Agent (moved from OpenClaw in May 2026), self-hosted on a Raspberry Pi 5 behind Tailscale and reached through Telegram, with 4 isolated gateway profiles including a sandboxed public one. Covers tasks, calendar, email, finances, health and fitness, knowledge, travel and home routines.
-- Designed its Second Brain: an Obsidian vault (226 notes) in a PARA layout with routing rules that tell the agent where to read and write, kept in sync between devices and the agent through CouchDB LiveSync and git; added on-device RAG over the vault (multilingual embeddings in ONNX, a SQLite vector store, incremental re-indexing on file changes).
-- Self-hosted integrations over MCP — tasks through my own sp-cli MCP server, trackers, SSH; earlier FastMCP servers for finance, bookmarks, habits and time tracking — plus cron automation (a watchlist monitor with priorities and quiet hours, digests, nightly git backups). About 115 skills, ~40 of them custom and 27 written by the agent itself.
-
-**Local LLMs for personal agents** (personal R&D, _Mar 2026 — Present_)
-
-- Self-hosted Qwen3.6-35B-A3B (MoE) as the primary model of my agents (OpenClaw, then about 200 Hermes sessions) on a single 12 GB RTX 4070. Converged through successive llama.cpp presets on expert offload to CPU, a q8_0 KV cache with flash attention, a 262K context, the Jinja chat template for tool calling and a vision projector. Tuned the agent for the model: forced tool-use enforcement, set compression so tool-call history survives, and split auxiliary tasks between the local model and larger ones through LiteLLM.
-- Tested smaller models for personal and edge agents on the RTX 4070 and a Raspberry Pi 5 — LFM2 / LFM2.5, Gemma-4-E2B, Qwen3.5 (0.8B–4B), Nemotron-Nano, a 1-bit Bonsai-8B and community fine-tunes — and chose LFM2.5 for the voice agent's local loop from my own concurrency benchmark.
-- Built [llama-tray](https://github.com/prineycom/llama-tray), a Windows tray controller for llama-server with per-model presets (GPU layers, MoE offload, KV quantization, vision projector), and a role-rewriting proxy that lets an agent framework talk to local backends.
+- Run Priney, my always-on assistant on Hermes, self-hosted on a Raspberry Pi 5, covering tasks, calendar, email, finances, health, knowledge and travel. Designed its Second Brain — an Obsidian vault of 226 notes with routing rules for where the agent reads and writes, synced through CouchDB and git — and an on-device RAG over it (ONNX embeddings, SQLite vector store, incremental re-indexing).
+- Wrote its integrations with self-hosted services: MCP servers for tasks (sp-cli) and, earlier, habit and time tracking, alongside finance and bookmark services; plus cron automations — a watchlist monitor with priorities and quiet hours, digests, nightly backups.
+- Self-hosted Qwen3.6-35B-A3B as my agents' primary model on a single 12 GB GPU (MoE expert offload, quantized KV cache, 262K context, tool-calling template) and tuned the agent around it — enforced tool use, compression that keeps tool-call history; tested smaller models (LFM, Gemma, Qwen, community fine-tunes) on the GPU and the Pi; built [llama-tray](https://github.com/prineycom/llama-tray) to switch model presets.
 
 **[sp-cli](https://github.com/prineycom/sp-cli) — CLI and MCP server for Super Productivity** (_Sep 2026_)
 
-- 97 commands over the app's WebDAV sync file (op-log, vector clocks, ETag retries, rotating backups); the MCP server generates its tools from the argparse tree, 1:1 with the CLI. 919 tests, CI on Python 3.11–3.13. Built in 2 days by an autonomous agent session on the yoke workflow — 15 areas, each through plan → implementation → review → fixes — and verified against a live phone sync.
+- 97 commands with an MCP server generated from the CLI itself; built in 2 days by an autonomous agent session on the yoke workflow and verified against a live phone sync.
 
 ## Key Metrics (July 2025 — September 2026)
 
-- Throughput with a quality denominator: 3,900+ commits and 368 pull requests (341 merged, 93%) across 59 repositories in 3 organizations and a personal account in 15 months; only 12 commits were reverts.
-- Context engineering: about a third of commits change only Markdown or agent-configuration files (plans, journals, skills, CLAUDE.md); about 25 skills and 25 subagent definitions authored and versioned in git.
-- Studio delivery led: 40 installations from 33 repositories, 2,299 tracked tasks and 670 pull requests; agent configuration grew from 0 to 22 of 33 repositories in a year.
+- Throughput with a quality denominator: 3,900+ commits and 368 pull requests (341 merged, 93%) across 59 repositories in 15 months; only 12 commits were reverts.
+- Context engineering: about a third of commits change only Markdown or agent configuration (plans, journals, skills, CLAUDE.md); about 25 skills and 25 subagent definitions authored and versioned in git.
 
 ![Contribution graph](assets/contributions.svg)
 
@@ -75,43 +65,41 @@ _Drawn from local git history across my personal and work GitHub accounts; GitHu
 
 _Two-founder company building LLM-agent products for small and mid-size businesses; I own product, specifications and client delivery, my co-founder owns core engineering_
 
-- Specified hermes-orchestration, a platform for hosting isolated AI agents on bare metal, and deploy and operate it for clients: Aleen (medical-data assistant, 6 active users) and Talking Birds (staff agents for business-process automation) — see Projects.
-- Co-author of the yoke Claude Code plugin and the yokemate orchestrator; I set product direction and specifications, my co-founder leads core engineering.
+- Specified hermes-orchestration, a platform for hosting isolated AI agents on bare metal (a sandbox per user, credentials kept on the host); deploy and operate it for clients, including Aleen and Talking Birds.
+- Co-authored the yoke Claude Code plugin and the yokemate orchestrator.
 
 ### **Talking Birds & Flying Fish** — **Tech Lead → Team Lead → Head of Development** — _Jul 2024 — Present_
 
 _Barcelona production studio: interactive installations for corporate conference stands and museum exhibitions; clients include Microsoft. Tech Lead (Jul 2024), Team Lead (May 2025), Head of Development (Jan 2026)_
 
-- Grew the web team from 2 to 5 developers and lead them alongside 2 Unreal Engine developers: 40 installations (25 visitor-facing) in 12 experience families from 33 repositories — Microsoft conference stands touring 12 cities, game stations, a permanent museum exhibition — with 2,299 tracked tasks and 670 PRs. Still hands-on: 1,128 own commits in 24 of 33 repositories.
-- Lead the studio's AI adoption and agent integration track (see Projects: development pipeline, Hermes agents, data core).
-- As developer on the museum exhibit: replaced a legacy .NET drawing recognizer with a Python service (OpenCV ArUco markers, homography, FastAPI, single-exe build with a CI smoke test) without touching installed hardware; built a 40-case test harness, disproved my own planned fix with diagnostics and moved the remaining error class into the printed form's marker codes (ADR).
-- Co-developed the shared `@tb-ff/web-toolkit` (used in 18 of 33 projects); set up centralized logging (Loki, Grafana).
+- Grew the web team from 2 to 5 developers and lead them alongside 2 Unreal Engine developers: 40 installations (25 visitor-facing) from 33 repositories — Microsoft conference stands touring 12 cities, game stations, a permanent museum exhibition — with 2,299 tracked tasks and 670 PRs; 1,128 own commits.
+- Lead the studio's AI adoption: the agent-driven development pipeline and Hermes business automation above.
+- As developer on the museum exhibit, replaced a legacy .NET drawing recognizer with a Python OpenCV service without touching installed hardware; built a 40-case test harness, disproved my own planned fix with diagnostics and moved the remaining error class into the printed form's marker codes.
+- Co-developed the shared `@tb-ff/web-toolkit` (used in 18 of 33 projects) and set up centralized logging (Loki, Grafana).
 
 ### **Sminex** — **Senior Full-Stack Developer, Team Lead (Business Process Automation)** — _May 2022 — Jul 2024_
 
-- Led the in-house business-process automation team of 3 developers at a real-estate developer: development process, architecture decisions, hiring. Shipped 5 web services that automated construction and operational workflows for customer departments, integrated with internal databases and services, and supported them in production. _TypeScript, React, Node.js (NestJS), PostgreSQL, Python (Django), Autodesk Forge._
+- Led the in-house business-process automation team of 3 at a real-estate developer (process, architecture, hiring); shipped 5 web services automating construction and operational workflows, integrated with internal systems and supported in production. _TypeScript, React, NestJS, PostgreSQL, Django, Autodesk Forge._
 
 ### **SU-10** — **Tech Lead, Construction Process Automation** — _Aug 2021 — May 2022_
 
-- Led a team of 3 building construction business-process automation on the Autodesk Forge (BIM) API: processes and regulations from scratch, architecture, MVP in 10 months. 1st place at the Autodesk Forge Hackathon 2021 (Cloud Collaboration).
+- Led a team of 3 automating construction business processes on the Autodesk Forge (BIM) API, from development process to MVP in 10 months; 1st place at the Autodesk Forge Hackathon 2021 (Cloud Collaboration).
 
 ### **RoadAR** — **Frontend Developer** — _Feb 2022 — Sep 2022_ (part-time)
 
-- Web visualization of point clouds and spatial data from SLAM and ML pipelines; React, deck.gl, WebGL, Cesium.
+- Web visualization of point clouds and spatial data from SLAM and ML pipelines (React, deck.gl, WebGL, Cesium).
 
 ### **DataMap Geodata Laboratory** — **Frontend Web Developer** — _Mar 2018 — Aug 2021_
 
-- GIS web services and geodata collection: 5+ client projects through Upwork, 5 data-collection projects, a year-long web application release; trained 20+ students and co-organized 2 hackathons.
+- GIS web services and geodata collection: 5+ client projects through Upwork, 5 data-collection projects; trained 20+ students and co-organized 2 hackathons.
 
-**Earlier roles**: AT Consulting — Frontend Developer, customer portal for a mobile operator (_2017 — 2018_); freelance web development (_2015 — 2016_); PHP internship (_2014_).
+**Earlier roles**: AT Consulting — Frontend Developer (_2017 — 2018_); freelance web development (_2015 — 2016_); PHP internship (_2014_).
 
 ## Technical Skills
 
-- **Agent engineering**: Claude Code (skills, subagents, PreToolUse and SessionStart hooks, CLAUDE.md), Claude Agent SDK, pi agent runtime, Hermes Agent, MCP servers (FastMCP, stdio, generated tools), context engineering, orchestrator-worker pipelines with human-in-the-loop merge gates, model routing, structured outputs and tool calling
-- **Evals, RAG & observability**: promptfoo with LLM-as-judge, test harnesses for CV and agent behavior, RAG (chunking, multilingual embeddings, SQLite vector store, SharePoint via Microsoft Graph), LangSmith tracing, Sentry, Loki, Grafana
-- **Inference & voice**: llama.cpp (quantization, speculative decoding, MoE offload), TensorRT, LiteLLM, Open WebUI, Whisper, VoxCPM2, Qwen3-TTS, NVIDIA Audio2Face-3D, LiveKit, FastRTC / WebRTC, ComfyUI (local image and video models)
-- **Product stack**: Python (FastAPI, Django, pytest), TypeScript, React 19, Electron, Node.js, PostgreSQL, Supabase, SQLite, OpenCV, three.js, Docker, Dokploy, Tailscale, GitHub Actions
-- **Workstation**: Arch Linux (Omarchy), Neovim, herdr terminal multiplexer for agent panes, pi coding agent, Claude Code
+- **Agents & LLM**: Claude Code (skills, subagents, hooks), Claude Agent SDK, pi, Hermes Agent, MCP servers, context engineering, orchestrator-worker pipelines with human merge gates, structured outputs and tool calling, LiteLLM
+- **Evals, RAG & inference**: promptfoo with LLM-as-judge, test harnesses, RAG (chunking, multilingual embeddings, vector stores, SharePoint via Microsoft Graph), LangSmith, llama.cpp (quantization, MoE offload, speculative decoding), TensorRT, Whisper and TTS models, ComfyUI
+- **Stack & workstation**: Python (FastAPI, Django, pytest), TypeScript, React, Electron, Node.js, PostgreSQL, Supabase, SQLite, OpenCV, Docker, GitHub Actions; Arch Linux (Omarchy), Neovim, herdr, pi, Claude Code
 - **Languages**: Russian (native), English (fluent, professional working), Serbian (basic)
 
 ## Education
