@@ -57,3 +57,8 @@ a {
   color: #1a4d8f;
   text-decoration: none;
 }
+
+/* Russian text runs ~10% longer; keep the PDF at two pages. */
+html[lang="ru"] body {
+  font-size: 8.5pt;
+}

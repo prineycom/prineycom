@@ -2,12 +2,13 @@
 # requires-python = ">=3.11"
 # dependencies = ["markdown>=3.6"]
 # ///
-"""Build CV.pdf from README.md: Markdown -> HTML (styles/cv.css) -> headless Chrome PDF.
+"""Build CV.pdf from README.md and CV_RU.pdf from README.ru.md: Markdown -> HTML (styles/cv.css) -> headless Chrome PDF.
 
 Run: uv run scripts/build_cv.py
 """
 
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -16,10 +17,8 @@ from pathlib import Path
 import markdown
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "README.md"
+BUILDS = [("README.md", "CV.pdf", "en"), ("README.ru.md", "CV_RU.pdf", "ru")]
 CSS = ROOT / "styles" / "cv.css"
-HTML = ROOT / "build" / "cv.html"
-PDF = ROOT / "CV.pdf"
 
 CHROME_CANDIDATES = [
     os.environ.get("CHROME", ""),
@@ -37,33 +36,32 @@ def find_chrome() -> str:
     sys.exit("Chrome not found; set CHROME=/path/to/chrome")
 
 
-def main() -> None:
-    text = SRC.read_text(encoding="utf-8")
-    # The PDF itself does not link to itself.
-    text = text.replace(" • [CV.pdf](https://github.com/prineycom/prineycom/raw/main/CV.pdf)", "")
+def build(src: str, out: str, lang: str) -> None:
+    text = (ROOT / src).read_text(encoding="utf-8")
+    # The PDFs do not link to themselves.
+    text = re.sub(r" • \[CV\.pdf\]\([^)]*\)( · \[CV_RU\.pdf\]\([^)]*\))?", "", text)
     text = text.replace("](assets/", f"]({(ROOT / 'assets').as_uri()}/")
     body = markdown.markdown(text, extensions=["extra", "sane_lists"])
-    HTML.parent.mkdir(exist_ok=True)
-    HTML.write_text(
-        "<!doctype html><html lang='en'><head><meta charset='utf-8'>"
+    html = ROOT / "build" / f"{Path(out).stem}.html"
+    html.parent.mkdir(exist_ok=True)
+    html.write_text(
+        f"<!doctype html><html lang='{lang}'><head><meta charset='utf-8'>"
         "<title>Pavel Donin — CV</title>"
         f"<style>{CSS.read_text(encoding='utf-8')}</style></head>"
         f"<body>{body}</body></html>",
         encoding="utf-8",
     )
     subprocess.run(
-        [
-            find_chrome(),
-            "--headless",
-            "--disable-gpu",
-            "--no-pdf-header-footer",
-            f"--print-to-pdf={PDF}",
-            HTML.as_uri(),
-        ],
+        [find_chrome(), "--headless", "--disable-gpu", "--no-pdf-header-footer", f"--print-to-pdf={ROOT / out}", html.as_uri()],
         check=True,
         capture_output=True,
     )
-    print(f"wrote {PDF.relative_to(ROOT)}")
+    print(f"wrote {out}")
+
+
+def main() -> None:
+    for src, out, lang in BUILDS:
+        build(src, out, lang)
 
 
 if __name__ == "__main__":

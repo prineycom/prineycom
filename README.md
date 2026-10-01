@@ -6,7 +6,7 @@ _Agent harnesses, orchestration and MCP tooling in production for a studio team 
 
 ## Contact
 
-[doninpr@gmail.com](mailto:doninpr@gmail.com) • [linkedin.com/in/doninpr](https://www.linkedin.com/in/doninpr) • [t.me/doninpr](https://t.me/doninpr) • [github.com/prineycom](https://github.com/prineycom) • [CV.pdf](https://github.com/prineycom/prineycom/raw/main/CV.pdf)  
+[doninpr@gmail.com](mailto:doninpr@gmail.com) • [linkedin.com/in/doninpr](https://www.linkedin.com/in/doninpr) • [t.me/doninpr](https://t.me/doninpr) • [github.com/prineycom](https://github.com/prineycom) • [CV.pdf](https://github.com/prineycom/prineycom/raw/main/CV.pdf) · [CV_RU.pdf](https://github.com/prineycom/prineycom/raw/main/CV_RU.pdf)  
 Novi Sad, Serbia (CET, UTC+1) · remote, EU time zone · open to full-time AI Engineer, Agent Platform, Applied AI and Forward Deployed roles worldwide · B2B contract or EOR
 
 ## Professional Summary
@@ -78,5 +78,5 @@ _Barcelona production studio: interactive installations for corporate conference
 - **Agents & orchestration**: Claude Code (skills, subagents, hooks), Claude Agent SDK (Anthropic API), Hermes Agent, pi, MCP servers, agentic and multi-agent workflows (orchestrator-worker, reviewer loops, human-in-the-loop gates), prompt and context engineering, structured outputs, tool / function calling, model routing
 - **Evals, guardrails & observability**: promptfoo with LLM-as-judge, test harnesses, PreToolUse guards, per-user sandboxes, least-privilege access, LangSmith tracing, Sentry, Loki, Grafana
 - **RAG & inference**: retrieval (chunking, multilingual ONNX embeddings, vector stores, SharePoint via Microsoft Graph), llama.cpp (quantization, MoE offload, speculative decoding), TensorRT, Whisper and TTS models, ComfyUI
-- **Model providers & stack**: Anthropic, OpenAI-compatible APIs via LiteLLM, open-weight Qwen / LFM / Gemma self-hosted; Python (FastAPI, pytest), TypeScript, React, Electron, PostgreSQL, Supabase, SQLite, Docker, GitHub Actions CI/CD, Dokploy, Tailscale; workstation: Arch Linux (Omarchy), Neovim, herdr
+- **Model providers & stack**: Anthropic, Ollama Cloud, OpenAI-compatible APIs via LiteLLM, open-weight Qwen / LFM / Gemma self-hosted; Python (FastAPI, pytest), TypeScript, React, Electron, PostgreSQL, Supabase, SQLite, Docker, GitHub Actions CI/CD, Dokploy, Tailscale; workstation: Arch Linux (Omarchy), Neovim, herdr
 - **Education & languages**: Information Systems and Technologies, MIIGAiK, Moscow (2013 — 2017); Russian (native), English (fluent), Serbian (basic)
