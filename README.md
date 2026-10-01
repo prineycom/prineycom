@@ -2,7 +2,7 @@
 
 **AI Engineer — Agent Orchestration, LLM Tooling**
 
-_Agent harnesses, orchestration and MCP tooling in production for a studio team and client users · 10+ years in software, 5 of them leading teams_
+_Agent harnesses, orchestration and MCP tooling in production for a studio team and client users · 12 years in software, 5 as a team lead and head of development_
 
 ## Contact
 
@@ -11,7 +11,7 @@ Novi Sad, Serbia (CET, UTC+1) · remote, EU time zone · open to full-time AI En
 
 ## Professional Summary
 
-AI engineer who designs agentic systems — MCP servers, subagents and agent skills — and runs them reliably in production. I moved a 7-person studio team onto agent-driven development and built its business automation: LLM agents on the open-source Hermes Agent runtime with skills, Microsoft 365 integrations over MCP and evals I wrote, on a data core an agent rolled out from my spec. For clients I designed the isolation model of an agent-hosting platform and operate a medical-data RAG assistant; I co-built the Claude Code orchestrator that runs my delivery and self-host open models for my agents. 10+ years of full-stack engineering (Python, TypeScript), 5 of them leading teams.
+AI engineer who designs agentic systems — MCP servers, subagents and agent skills — and runs them reliably in production. I moved a 7-person studio team onto agent-driven development and built its business automation: LLM agents on the open-source Hermes Agent runtime with skills, Microsoft 365 integrations over MCP and evals I wrote, on a data core an agent rolled out from my spec. For clients I designed the isolation model of an agent-hosting platform and operate a medical-data RAG assistant; I co-built the Claude Code orchestrator that runs my delivery and self-host open models for my agents. 12 years of full-stack engineering (Python, TypeScript), 5 of them as a team lead and head of development.
 
 ## AI Engineering Projects
 
@@ -63,7 +63,7 @@ _Barcelona production studio: interactive installations for corporate conference
 - Delivered 40 installations (25 visitor-facing) from 33 repositories — Microsoft conference stands touring 12 cities, game stations, a permanent museum exhibition — with 2,299 tracked tasks and 670 PRs, while staying hands-on (1,128 own commits); the shared `@tb-ff/web-toolkit` I co-developed is used in 18 of 33 projects.
 - As developer on the museum exhibit, replaced a legacy .NET drawing recognizer with a Python OpenCV service without touching installed hardware; built a 40-case test harness, disproved my own planned fix with diagnostics and moved the remaining error class into the printed form's marker codes.
 
-### **Sminex** — **Team Lead, Business Process Automation** — _May 2022 — Jul 2024_
+### **Sminex** — **Tech Lead, Business Process Automation** — _May 2022 — Jul 2024_
 
 - Led a team of 3 at a real-estate developer; shipped 5 web services automating construction and operational workflows, integrated with internal systems (TypeScript, NestJS, PostgreSQL, Django).
 
