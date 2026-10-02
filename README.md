@@ -17,7 +17,7 @@ AI engineer who designs agentic systems — MCP servers, subagents and agent ski
 
 **LLM-driven development pipeline for a production studio** (Talking Birds & Flying Fish, _Aug 2025 — Present_)
 
-- Moved the studio team onto agent-driven delivery: added the first agent configuration in Aug 2025, and a year later it was in 22 of 33 repositories, with every 2026 project starting from it. Designed together with the team and introduced a plan → isolated worktree → independent agent review → human acceptance → ship workflow that took root in the team's process.
+- Moved the studio team onto agent-driven delivery: added the first agent configuration in Aug 2025, and a year later it was in 22 of 33 repositories, with every 2026 project starting from it. Designed together with the team and introduced a plan → isolated worktree → independent agent review → human acceptance → ship workflow that took root in the team's process; on the same museum-exhibit codebase my hands-on output per coding day rose about 3× (2024 vs. 2026).
 - Ran studio work through the yokemate orchestrator: 80+ agent-written plans across 11 studio projects, from museum installations to internal systems.
 
 **LLM agents for business-process automation** (Talking Birds & Flying Fish, _Apr 2026 — Present_)
